@@ -1,0 +1,58 @@
+:root {
+    --dbr: #290001;
+    --br: #87431d;
+    --lbr: #c87941;
+    --grey: #dbcbbd;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)),
+                url(img/boardbgd.jpg);
+}
+
+/* global style */
+.belle_f {
+    font-family: ;
+}
+/* //global style */
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+.banner__tit {
+    font-size: 3em;
+    text-transform: uppercase;
+    color: var(--br)
+}
+.banner__icon {
+    font-size: 1.7em;
+    
+}
+.banner__s_icon {
+    color: #fff;
+}
+
+/* media */
+@media(max-width: 768px){
+    .header {
+        background: url(img/hederbg.jpg) center/cover fixed no-repeat;
+  
+
+
+    }
+}
