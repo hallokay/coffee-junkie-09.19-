@@ -25,6 +25,43 @@ body {
 }
 /* //global style */
 
+/* pre loading */
+.pre-load {
+    position: fixed;
+    background: rgba(255,255,255,.5);
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+}
+.loading {
+    width: 20px;
+    height: 100px;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+    animation: load .8s infinite;
+}
+.loading .l-c {
+    width: 20px;
+    height: 20px;
+    background: #fdc21f;
+    border-radius: 50%; 
+}
+.circle2{
+    margin-top: 60px;
+}
+
+@keyframes load {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
 /* header */
 .header {
     display: flex;
@@ -44,6 +81,7 @@ body {
     background: rgba(0, 0, 0,.4);
     min-width: 40vw;
     min-height: 50vh;
+    overflow: hidden;
     
 }
 
@@ -80,7 +118,7 @@ body {
     position: absolute;
     top: 0; left: 0;
     height: 100%;
-    z-index: -1;
+    z-index: -10;
 }
 .video {
     width: 100%;
@@ -118,13 +156,18 @@ body {
 }
 
 /* nav */
-#nav {
+.nav {
     position: fixed;
-    top: 0;left: 0;
+    top: 0 ;left: -500px;
     height: 100%;
     width: 30%;
     background: rgba(41, 0, 1,0.9);
+    transition: all .4s ease;
 }
+.nav.open {
+    left: 0;
+}
+
 
 .nav_logo h1 {
     font-size: 4rem;
@@ -163,6 +206,31 @@ body {
 }
 
 
+/* vi */
+.video_switch_container {
+    position: absolute;
+    bottom: 5%; right: 5%;
+}
+.v_switch{
+    position: relative;
+    width: 5rem;
+    background: var(--dbr);
+    color: #fff;
+    border-radius: 50px;
+    padding: .35em;
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.v_switch_btn{
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 50%;
+    background: var(--bryellow);
+    border-radius: 50px;
+}
 
 /* media */
 @media(max-width: 768px){
@@ -179,8 +247,8 @@ body {
     .nav_logo h1 {
         font-size: 2em;
     }
-    .nav_item {
-        /* font-size: 1rem; */
-        
+    
+    .video_switch_container {
+        display: none;
     }
 }
