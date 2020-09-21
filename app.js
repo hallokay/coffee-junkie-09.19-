@@ -1,17 +1,58 @@
 
 'use strict';
-
-//hide pre load
+// variable
 const preLoad = document.querySelector('.pre-load');
-window.addEventListener('load', function(){
-    preLoad.style.display = "none";
-});
+
+const navBtn = document.querySelector('.nav_btn'),
+        nav = document.querySelector('.nav');
+
+const switchV = document.querySelector('.v_switch'),
+    switchBtn =document.querySelector('.v_switch_btn'),
+     bgV = document.querySelector('.video');
+
+
+    //  function class
+class UI {
+    loading(){
+        preLoad.style.display = "none";
+    };
+
+    toggleMenu(){
+        nav.classList.toggle("open");
+    };
+    
+    videoControlls(){
+        if(!switchBtn.classList.contains('v_off')){
+            switchBtn.classList.add("v_off");   
+            bgV.pause();
+        } else {
+            switchBtn.classList.remove("v_off");
+            bgV.play();
+        };
+        
+    };
+};
+
+
+
+
+function eventListener (){
+    const ui = new UI ();
+
+//hide pre-load
+window.addEventListener('load',() =>  ui.loading());
 
 // nav menu
-const navBtn = document.querySelector('.nav_btn'),
-    nav = document.querySelector('.nav');
+navBtn.addEventListener('click', () =>ui.toggleMenu());
 
-navBtn.addEventListener('click', function(){
-    nav.classList.toggle("open");
-});
+// video switch
+switchV.addEventListener('click', () => ui.videoControlls());
 
+
+
+
+
+
+};
+
+eventListener();
