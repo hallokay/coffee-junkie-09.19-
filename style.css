@@ -292,6 +292,88 @@ body {
     order: -1;
 }
 
+/* drink */
+.drink {
+    background: var(--bryellow);
+    color: var(--dbr);
+    text-transform: capitalize;
+}
+.drink_form,
+.drink_card {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 75%;
+    justify-content: center;
+    grid-row-gap: 1em;
+}
+.drink_form_feedback {
+    border: .1rem solid;
+    padding: .25rem;
+    display: none;
+}
+.error {
+    display: block;
+    color: red;
+    border-color: red;
+}
+.seccess {
+    display: block;
+    color: green;
+    border-color: green;
+}
+ .drink_tit {
+     font-size: 2rem;
+ }
+
+ .input_con {
+     width: 60%;
+     font-size: 1rem;
+     border-radius: .5rem;
+     border: 0;
+     padding: .25rem .5rem;
+     outline: none;
+ }
+ .input_con::placeholder {
+     text-transform: capitalize; 
+ }
+
+ .input_submit {
+     width: 30%;
+     cursor: pointer;
+     text-transform: capitalize;
+     font-size: 1.3em;
+     font-weight: 600;
+     background: var(--dbr);
+     color: #fff;
+     transition: all .3s ease ;
+
+ }
+ .input_submit:hover {
+     color: var(--bryellow);
+ }
+
+ .drink_card_list {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     grid-row-gap: 1rem;
+ }
+.person {
+    display: grid;
+    grid-template-columns: auto auto 1fr ;
+    grid-gap: 30px;
+    align-items: center;
+    border: 2px solid;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+.person img {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+}
+
+
 
 
 /* media */
@@ -327,5 +409,11 @@ body {
         order: 0;
     }
   
+    .drink_card_list {
+     
+        grid-template-columns: 80%;
+        justify-content: center;
+    
+    }
 
 }

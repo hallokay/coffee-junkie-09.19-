@@ -10,6 +10,7 @@ const switchV = document.querySelector('.v_switch'),
     switchBtn =document.querySelector('.v_switch_btn'),
      bgV = document.querySelector('.video');
 
+const drinkForm = document.querySelector('.drink_form');
 
     //  function class
 class UI {
@@ -28,8 +29,15 @@ class UI {
         } else {
             switchBtn.classList.remove("v_off");
             bgV.play();
-        };
-        
+        };  
+    };
+
+    freeDrink(){
+   const name = document.querySelector('.input_name').value,
+        lastName = document.querySelector('.input_lastname').value,
+         email = document.querySelector('.input_email').value;
+    
+         
     };
 };
 
@@ -48,10 +56,10 @@ navBtn.addEventListener('click', () =>ui.toggleMenu());
 // video switch
 switchV.addEventListener('click', () => ui.videoControlls());
 
-
-
-
-
+drinkForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    ui.freeDrink();
+});
 
 };
 
