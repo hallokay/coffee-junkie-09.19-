@@ -35,6 +35,23 @@ body {
     grid-row-gap: 4rem;
 }
 
+.section_contents {
+    padding: 1rem .5rem;
+}
+.section_tit_left {
+    margin-left: 7rem;
+}
+.tit_name {
+    color: var(--dbr);
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+.tit_line {
+    width: 50%;
+    height: 5px;
+    background: var(--dbr);
+    margin-bottom: 1rem;
+}
 /* //global style */
 
 /* pre loading */
@@ -259,20 +276,6 @@ body {
     overflow: hidden;
 }
 
-.section_contents {
-    padding: 1rem .5rem;
-}
-.tit_name {
-    color: var(--dbr);
-    font-size: 3rem;
-    text-transform: capitalize;
-}
-.tit_line {
-    width: 50%;
-    height: 5px;
-    background: var(--dbr);
-    margin-bottom: 1rem;
-}
 .txt {
     letter-spacing: .1rem;
     line-height: 1.5;

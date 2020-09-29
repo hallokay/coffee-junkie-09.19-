@@ -10,8 +10,8 @@ const switchV = document.querySelector('.v_switch'),
     switchBtn =document.querySelector('.v_switch_btn'),
      bgV = document.querySelector('.video');
 
-     const drinkForm = document.querySelector('.drink_form');
-let feedBack = document.querySelector('.drink_form_feedback');
+const drinkForm = document.querySelector('.drink_form'),
+         feedBack = document.querySelector('.drink_form_feedback');
 
 
     //  function class
@@ -67,9 +67,32 @@ class UI {
     };
     //3뒤 에러메세지 사라짐
 
-};
+
+    //add customer
+    addCustomer(customer){
+        const images = [1,2,3,4,5];
+        let random = Math.floor(Math.random()*images.length);
+        const divPerson = document.createElement('div');
+        divPerson.classList.add('person');
+        divPerson.innerHTML =                 
+        `<img src="img/person${random}.JPG" alt="person_thumnail">
+        <h4 class="person_name">${customer.name}</h4>
+        <h4 class="person_lastname">${customer.lastName}</h4>`
+
+        const cardList = document.querySelector('.drink_card_list');
+        cardList.appendChild(divPerson);
+    };
+
+    //clear Fields
+    clearFields(){
+        document.querySelector('.input_name').value = '';
+        document.querySelector('.input_lastname').value = '';
+        document.querySelector('.input_email').value ='';
+    };
+}; 
 
 
+//오브젝트 구조의 함수
 function Customer (name, lastName, email){
     this.name = name,
     this.lastName = lastName,
@@ -101,8 +124,10 @@ lastName = document.querySelector('.input_lastname').value,
 
     let value =  ui.checkEmpty(name, lastName, email) 
     if(value){
-        
-       ui.showFeedback('customer added to the list','success');
+        let customer = new Customer(name, lastName, email);
+        ui.addCustomer(customer);
+        ui.showFeedback('customer added to the list','success');
+        ui.clearFields();
 
     } else {
        ui.showFeedback('some form value empty', 'error');
