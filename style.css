@@ -235,7 +235,7 @@ body {
 }
 
 
-/* vi */
+/* video */
 .video_switch_container {
     position: absolute;
     bottom: 5%; right: 5%;
@@ -376,8 +376,41 @@ body {
     border-radius: 50%;
 }
 
+/* work */
+.work_container {
+    width: 90vw;
+    margin: 2rem auto; 
+}
+.work_item {
+    position: relative;
+    background: linear-gradient(var(--bryellow),var(--bryellow));
+    overflow: hidden;
+}
+.work_item:hover .work_item_img {
+    opacity: .5;
+    transform: scale(1.2);
+}
+.work_item:hover .work_item_icon {
+    opacity: 1;
+}
+.work_item_img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;  
+    transition: all .3s ease;
+}
 
-
+.work_item_icon{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 5rem;
+    display: inline-block;
+    opacity: 0;
+    transition: all .5s ease;
+}
 
 /* media */
 @media(max-width: 768px){
@@ -416,7 +449,65 @@ body {
      
         grid-template-columns: 80%;
         justify-content: center;
+    }
+
+
+}
+
+@media(min-width: 576px){
+    .work_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;   
+        grid-gap: 1rem;
+    }
     
+}
+
+
+@media(min-width: 992px){
+    .work_container {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+
+        grid-template-areas:
+        "one one two three" 
+        "one one four four" 
+        "five six seven seven" 
+        "eight nine seven seven" 
+    }
+   
+    .item1 {
+        grid-area: one;
+    }
+    .item2 {
+        grid-area: two;
+    }
+    .item3 {
+        grid-area: three;
+    }
+    .item4 {
+        grid-area: four;
+    }
+    .item5 {
+        grid-area: five;
+    }
+    .item6 {
+        grid-area: six;
+    }
+    .item7 {
+        grid-area: seven;
+    }
+    .item8 {
+        grid-area: eight;
+    }
+    .item9 {
+        grid-area: nine;
+    }
+    
+    .work_item_img {
+        height: 100%;
     }
 
 }
