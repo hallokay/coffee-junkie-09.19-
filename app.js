@@ -13,6 +13,11 @@ const switchV = document.querySelector('.v_switch'),
 const drinkForm = document.querySelector('.drink_form'),
          feedBack = document.querySelector('.drink_form_feedback');
 
+const workIcons = document.querySelectorAll('.work_item_icon'),
+    modal = document.querySelector('.work_modal'),
+    modalItem = document.querySelector('.modal_item'),
+    closeIcon = document.querySelector('.modal_close');
+
 
     //  function class
 class UI {
@@ -89,6 +94,22 @@ class UI {
         document.querySelector('.input_lastname').value = '';
         document.querySelector('.input_email').value ='';
     };
+
+    // work Modal
+    showModal(ev){
+        ev.preventDefault();
+
+        if(ev.target.parentElement.classList.contains('work_item_icon')){
+            let dataId = ev.target.parentElement.dataset.id;
+
+             modal.classList.add('show');
+             modalItem.style.background = `url(img/work-${dataId}.jpg)`;
+        }
+    };
+
+    closeModal(){
+        modal.classList.remove('show');
+    };
 }; 
 
 
@@ -133,9 +154,18 @@ lastName = document.querySelector('.input_lastname').value,
        ui.showFeedback('some form value empty', 'error');
        
     };
-
 });
 
+// modal
+workIcons.forEach(function(item){
+    item.addEventListener('click', function(ev){
+       ui.showModal(ev);
+
+    });
+});
+
+//close modal
+closeIcon.addEventListener('click',() => ui.closeModal());
 
 };
 
