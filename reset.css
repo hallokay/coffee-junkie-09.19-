@@ -44,7 +44,7 @@ img, video{
 
 /*제목 초기화*/
 h1,h2,h3,h4,h5,h6{
-    font-size: 15px; 
+    font-size: inherit; 
     color: currentColor; 
     font-weight: normal;  
 }
